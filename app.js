@@ -5,16 +5,15 @@ const bodyParser=require("body-parser")
 const app=express()
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended:true}))
+app.set('view engine','ejs')
 
 var todolist=new Set();
 
 app.get("/",function(req, res){
-  res.sendFile(__dirname+"/index.html");
-  console.log("Server received a GET request");
+  res.render("page", {inputArray: Array.from(todolist)});
 })
 
 app.post("/",function(req, res){
-  console.log("Server received a POST request");
   Object.keys(req.body).forEach(function(Key){
     if(req.body[Key]==='deleted'){
       todolist.delete(Key);
@@ -23,8 +22,7 @@ app.post("/",function(req, res){
   if(req.body['new_item']!=''){
     todolist.add(req.body['new_item']);
   }
-  console.log(todolist);
-  res.sendFile(__dirname+"/index.html");
+  res.redirect("/");
 })
 
 app.listen(3333,function(){
