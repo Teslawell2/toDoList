@@ -1,0 +1,69 @@
+html{
+  font-family: 'Merriweather Sans', sans-serif;
+  background-color: #E4E9FD;
+}
+
+.box{
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+#heading{
+  background-color: #80ccff;
+  margin: 40px auto;
+  text-align: center;
+  font-size: 20px;
+}
+
+#heading h1{
+  color: #fff;
+}
+
+.item{
+  min-height: 70px;
+  border-bottom: 1px solid #F1F1F1;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+input[type="checkbox"] {
+  margin: 20px;
+}
+
+input:checked + p {
+  text-decoration: line-through;
+  text-decoration-color: black;
+}
+
+input[type="text"] {
+  text-align: center;
+  height: 50px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 200;
+  width: 313px;
+}
+
+button {
+  min-height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: #80ccff;
+  color: #fff;
+  font-size: 30px;
+  padding: 6px;
+  border-width: 0;
+  margin: 10px;
+}
+
+::placeholder{
+  font-family: 'Merriweather Sans', sans-serif;
+}
