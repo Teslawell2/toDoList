@@ -14,18 +14,28 @@
     <div class="box" id="heading">
       <h1>To Do List</h1>
     </div>
-    <div class="box">
 
-      <div class="item"><input type="checkbox"><p>Homework</p></div>
-      <div class="item"><input type="checkbox"><p>Shopping</p></div>
+    <form class="" action="/" method="post" autocomplete="off">
+      <div class="box">
+        <div class="item"><input type="checkbox" name="homework" value="deleted">
+          <p>Homework</p>
+        </div>
+        <div class="item"><input type="checkbox" name="shopping" value="deleted">
+          <p>Shopping</p>
+        </div>
+        <div class="item"><input type="checkbox" name="cooking" value="deleted">
+          <p>Cooking</p>
+        </div>
+        <div class="item">
+          <input type="text" name="new_item" placeholder="New Item">
+          <button type="submit" name="addOne"> + </button>
+        </div>
+      </div>
+      <div class="refreshButton">
+        <button type="submit" name="refreshPage"> Refresh </button>
+      </div>
 
-      <form class="item" action="index.html" method="post" autocomplete="off">
-        <input type="text" name="new_item" placeholder="New Item" >
-        <button type="submit" name="button"> + </button>
-      </form>
-    </div>
-
-
+    </form>
 
   </div>
 

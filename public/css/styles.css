@@ -29,6 +29,7 @@ html{
   display: flex;
   align-items: center;
   font-size: 20px;
+  font-family: inherit;
 }
 
 input[type="checkbox"] {
@@ -51,7 +52,7 @@ input[type="text"] {
   width: 313px;
 }
 
-button {
+button[name="addOne"] {
   min-height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -66,4 +67,20 @@ button {
 
 ::placeholder{
   font-family: 'Merriweather Sans', sans-serif;
+}
+
+.refreshButton{
+  text-align: center;
+}
+
+.refreshButton button{
+  background-color: #80ccff;
+  width: 200px;
+  margin: 20px auto;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 5px;
+  border-color: transparent;
+  font-family: inherit;
 }
