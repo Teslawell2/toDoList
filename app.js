@@ -9,8 +9,10 @@ app.use(bodyParser.urlencoded({
 }));
 app.set('view engine', 'ejs');
 
-mongoose.connect("mongodb://localhost:27017/todolistDB", {
-  useNewUrlParser: true
+// mongoose.connect("mongodb://localhost:27017/todolistDB", {
+mongoose.connect("mongodb+srv://admin:3.1415926@cluster0.p6nn4.mongodb.net/todolistDB?retryWrites=true&w=majority", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 });
 
 const itemsSchema = {
@@ -34,7 +36,7 @@ app.get("/", function(req, res) {
 app.post("/", function(req, res) {
   Object.keys(req.body).forEach(function(Key) {
     if (req.body[Key] === 'deleted') {
-      Item.deleteOne({
+      Item.deleteMany({
         name: Key
       }, function(err) {
         if (err) return handleError(err);
