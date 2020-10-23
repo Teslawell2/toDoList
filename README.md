@@ -5,5 +5,5 @@
 <p>I plan to release it on web side first. If I got extra time I would move it to mobile side.</p>
 <p> Anyone interested in this project please feel free to fork.</p>
 
-
+<p> Deployed on AWS EC2 and MongoDB Atlas. Here is the <a href=http://ec2-3-129-25-172.us-east-2.compute.amazonaws.com:3333/> link</a></p>
 
