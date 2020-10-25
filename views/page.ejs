@@ -15,7 +15,7 @@
       <h1>To Do List</h1>
     </div>
 
-    <form class="" action="/" method="post" autocomplete="off">
+    <form class="" action=<%=postAddress%> method="post" autocomplete="off">
       <div class="box">
   <%      for(var i=0; i<inputArray.length;i++){  %>
           <div class="item"><input type="checkbox" name=<%=inputArray[i]%> value="deleted">
