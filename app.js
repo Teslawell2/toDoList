@@ -44,7 +44,7 @@ app.route('/login')
           if (result) {
             res.render("page", {
               inputArray: foundUser.items,
-              postAddress: "/:" + username
+              postAddress: "/:" + foundUser.username
             });
           } else {
             console.log("Wrong Password");
