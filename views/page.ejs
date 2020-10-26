@@ -18,7 +18,7 @@
     <form class="" action=<%=postAddress%> method="post" autocomplete="off">
       <div class="box">
   <%      for(var i=0; i<inputArray.length;i++){  %>
-          <div class="item"><input type="checkbox" name=<%=inputArray[i]%> value="deleted">
+          <div class="item"><input type="checkbox" name="<%=inputArray[i]%>" value="deleted">
             <p><%=inputArray[i]%></p>
           </div>
   <%      }     %>
