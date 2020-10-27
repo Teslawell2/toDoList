@@ -33,7 +33,7 @@ app.route('/')
 
 app.route('/login')
   .get((req, res) => {
-    res.render("login", {})
+    res.render("login", {loginError: false})
   })
   .post((req, res) => {
     List.findOne({
@@ -44,32 +44,29 @@ app.route('/login')
           if (result) {
             res.render("page", {
               inputArray: foundUser.items,
-              postAddress: "/:" + foundUser.username
+              postAddress: "/" + foundUser.username
             });
           } else {
-            console.log("Wrong Password");
-            res.redirect('/login');
+            res.render("login", {loginError: true});
           }
         })
 
       } else {
-        console.log("No such user");
-        res.redirect('/login');
+        res.render("login", {loginError: true});
       }
     })
   })
 
 app.route('/register')
   .get((req, res) => {
-    res.render("register", {})
+    res.render("register", {registerError:false})
   })
   .post((req, res) => {
     List.findOne({
       username: req.body.username
     }, (err, foundlist) => {
       if (foundlist != null) {
-        console.log("Username exists!");
-        res.redirect('/register');
+        res.render("register",{registerError:true});
       } else {
         bcrypt.hash(req.body.password, saltround, (err, hash) => {
           const userlist = new List({
@@ -80,7 +77,7 @@ app.route('/register')
           userlist.save();
           res.render("page", {
             inputArray: userlist.items,
-            postAddress: "/:" + userlist.username
+            postAddress: "/" + userlist.username
           });
         })
       }
@@ -90,14 +87,13 @@ app.route('/register')
 app.route('/:username')
   .post((req, res) => {
     List.findOne({
-      username: req.params.username.slice(1)
+      username: req.params.username
     }, (err, founduser) => {
       if (founduser != null) {
         for (Key of Object.keys(req.body)) {
           if (Key == 'new_item' && req.body['new_item'] != '') {
             founduser.items.push(req.body['new_item']);
           } else if (req.body[Key] === 'deleted') {
-            console.log(Key);
             var index=founduser.items.indexOf(Key);
             if(index != -1){
               founduser.items.splice(index,1);

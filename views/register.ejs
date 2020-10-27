@@ -1,6 +1,9 @@
 <%- include('partials/header') %>
-
+<div class="nav-bar">
+  <button type="button" class="btn exit-btn" onclick="location.href='/'">Back</button>
+</div>
 <div class="container mt-5">
+
   <h1>Register</h1>
   <div class="row">
     <div class="col-sm-8">
@@ -10,6 +13,9 @@
             <div class="form-group">
               <label for="email">Email</label>
               <input type="email" class="form-control" name="username">
+          <%  if(registerError){   %>
+            <p class="warn-msg">Username already exists!</p>
+      <%    }       %>
             </div>
             <div class="form-group">
               <label for="password">Password</label>

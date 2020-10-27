@@ -1,6 +1,6 @@
 html{
   font-family: 'Merriweather Sans', sans-serif;
-  background-color: #E4E9FD;
+  background-color: #b3e6ff;
 }
 
 .box{
@@ -79,6 +79,59 @@ button[name="addOne"] {
   margin: 20px auto;
   text-align: center;
   padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 5px;
+  border-color: transparent;
+  font-family: inherit;
+}
+
+body{
+  background-color: inherit;
+}
+
+.container{
+  text-align: center;
+}
+
+.card{
+  background-color: #80ccff;
+  max-width: 400px;
+  margin: 10px auto;
+}
+
+.col-sm-8{
+  text-align: center;
+  margin: 10px auto;
+}
+
+.warn-msg{
+  color: red;
+}
+
+.jumbotron{
+  background-color: inherit;
+}
+
+.lead{
+  margin: 50px auto;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 2rem;
+}
+
+.btn{
+  width: 150px;
+}
+
+.nav-bar{
+  text-align: left;
+  margin: 10px;
+}
+.exit-btn{
+  background-color: #00aaff;
+  width: 100px;
+  margin: 10px auto;
+  text-align: center;
+  padding: 10px 10px;
   font-size: 20px;
   border-radius: 5px;
   border-color: transparent;
